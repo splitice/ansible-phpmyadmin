@@ -11,8 +11,8 @@ dependencies:
     tags: [ 'mysql', 'phpmyadmin' ]
 
   - role: debops.nginx
-    nginx_servers: [ '{{ phpmyadmin_nginx_server }}' ]
-    nginx_upstreams: [ '{{ phpmyadmin_nginx_upstream_php }}' ]
+    nginx__servers: [ '{{ phpmyadmin_nginx_server }}' ]
+    nginx__upstreams: [ '{{ phpmyadmin_nginx_upstream_php }}' ]
     when: phpmyadmin_dependencies is defined and phpmyadmin_dependencies
     tags: [ 'mysql', 'phpmyadmin', 'nginx' ]
 
