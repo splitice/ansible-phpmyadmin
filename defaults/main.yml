@@ -20,6 +20,6 @@ phpmyadmin_allow: []
 phpmyadmin_upload_size: '64M'
 
 # Maximum number of PHP5 processes for PHPMyAdmin
-phpmyadmin_php5_max_children: '20'
+phpmyadmin_php_max_children: '20'
 
 
