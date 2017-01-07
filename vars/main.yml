@@ -37,18 +37,18 @@ phpmyadmin_nginx_server:
 
 phpmyadmin_nginx_upstream_php:
   enabled: True
-  name: 'php_phpmyadmin'
+  name: 'phpmyadmin'
   type: 'php'
   php: 'phpmyadmin'
 
-phpmyadmin_php_pool:
-  enabled: True
-  name: 'phpmyadmin'
-  user: 'www-data'
-  group: 'www-data'
-  pm_max_children: '{{ phpmyadmin_php_max_children }}'
-  php_value:
-    post_max_size: '{{ phpmyadmin_upload_size }}'
-    upload_max_filesize: '{{ phpmyadmin_upload_size }}'
+phpmyadmin__php__dependent_pools:
+  - enabled: True
+    name: 'phpmyadmin'
+    user: 'www-data'
+    group: 'www-data'
+    pm_max_children: '{{ phpmyadmin_php_max_children }}'
+    php_value:
+      post_max_size: '{{ phpmyadmin_upload_size }}'
+      upload_max_filesize: '{{ phpmyadmin_upload_size }}'
 
 
