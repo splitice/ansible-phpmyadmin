@@ -5,7 +5,7 @@ dependencies:
   - role: debops.secret
 
   - role: debops.php
-    php__packages: [ 'php-mysql', 'php-mcrypt', 'php-gd' ]
+    php__packages: [ 'php7.0-mysql', 'php7.0-mcrypt', 'php7.0-gd' ]
     php__pools: [ '{{ phpmyadmin__php__dependent_pools }}' ]
     when: phpmyadmin_dependencies is defined and phpmyadmin_dependencies
     tags: [ 'mysql', 'phpmyadmin' ]

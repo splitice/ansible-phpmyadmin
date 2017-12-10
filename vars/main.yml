@@ -14,6 +14,9 @@ phpmyadmin_nginx_server:
 
   options: |
     client_max_body_size  {{ phpmyadmin_upload_size }};
+    gzip on;
+    gzip_comp_level 8;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 
   location:
 
@@ -25,7 +28,7 @@ phpmyadmin_nginx_server:
   location_allow:
     '/': '{{ phpmyadmin_allow }}'
 
-  php: 'php_phpmyadmin'
+  php_upstream: 'phpmyadmin'
 
   php_options: |
     {% if phpmyadmin_allow is defined and phpmyadmin_allow %}
